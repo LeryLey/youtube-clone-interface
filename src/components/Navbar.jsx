@@ -1,20 +1,22 @@
-import { IoIosMenu } from "react-icons/io";
 import { MdKeyboardVoice } from "react-icons/md";
 import { RiVideoAddLine } from "react-icons/ri";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoMenuOutline } from "react-icons/io5";
+
 import { CiSearch } from "react-icons/ci";
 import Logo from "/src/assets/yt.png";
 import Profile from "/src/assets/user-profile.jpg";
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
   return (
-    <nav className="flex items-center justify-between py-2 px-5">
+    <nav className="flex items-center justify-between py-2 px-4">
       <div className="flex items-center">
         <button
           type="button"
-          className="text-gray-100 w-10 h-10 rounded-full bg-transparent hover:bg-white/10 flex items-center justify-center"
+          onClick={toggle}
+          className="text-zinc-300 w-10 h-10 rounded-full bg-transparent hover:bg-white/10 flex items-center justify-center"
         >
-          <IoIosMenu size={30} />
+          <IoMenuOutline size={30} />
         </button>
         <div className="relative flex items-center">
           <img src={Logo} alt="logo" className="w-10" />
@@ -59,7 +61,11 @@ const Navbar = () => {
         >
           <IoMdNotificationsOutline size={25} />
         </button>
-        <img src={Profile} alt="profile" className="w-8 h-8 bg-inherit rounded-full" />
+        <img
+          src={Profile}
+          alt="profile"
+          className="w-8 h-8 bg-inherit rounded-full"
+        />
       </div>
     </nav>
   );
